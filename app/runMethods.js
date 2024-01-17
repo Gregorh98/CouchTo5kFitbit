@@ -27,7 +27,7 @@ async function event(type, seconds)
     display.poke()
     vibration.start(vibrationType);
     runInstructionText.text = type;
-    await sleep(seconds * 100);
+    await sleep(seconds * 1000);
 }
 
 export async function weekRunDistributor(week, run) {
