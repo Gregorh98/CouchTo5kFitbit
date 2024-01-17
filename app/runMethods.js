@@ -91,15 +91,26 @@ export async function w2r3() {
 
 // Week 3
 export async function w3r1() {
-    console.log("week 3 - run 1");
+    await event("Warm-Up Walk", 300)
+
+    await event("Run " + i.toString(), 90)
+    await event("Walk", 90)
+    await event("Run " + i.toString(), 180)
+    await event("Walk", 180)
+    await event("Run " + i.toString(), 90)
+    await event("Walk", 90)
+    await event("Run " + i.toString(), 180)
+
+    await event("Cool-Down Walk", 300)
+    await event("Finished!", 0)
 }
 
 export async function w3r2() {
-    console.log("week 3 - run 2");
+    await w3r1
 }
 
 export async function w3r3() {
-    console.log("week 3 - run 3");
+    await w3r1
 }
 
 // Week 4
