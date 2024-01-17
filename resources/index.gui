@@ -1,23 +1,28 @@
 <svg>
-    <rect id="background"/>
-    <text id="myLabel">
-        <animate attributeName="opacity" begin="load" from="0" to="1" dur="2" final="restore" />
-    </text>
-
-    <circle id="run1Button" class="runButton"/>
-    <circle id="run2Button" class="runButton"/>
-    <circle id="run3Button" class="runButton"/>
-
-    <text id="run1Label" class="runLabel">1
+    <svg id="homeScreen">
+        <rect id="background" class="background"/>
+        <text id="myLabel">
             <animate attributeName="opacity" begin="load" from="0" to="1" dur="2" final="restore" />
-    </text>
-    <text id="run2Label" class="runLabel">2
-            <animate attributeName="opacity" begin="load" from="0" to="1" dur="3" final="restore" />
-    </text>
-    <text id="run3Label" class="runLabel">3
-            <animate attributeName="opacity" begin="load" from="0" to="1" dur="4" final="restore" />
-    </text>
+        </text>
 
-    <rect id="clickableForeground" pointer-events="all"/>
+        <circle id="run1Button" class="runButton"/>
+        <circle id="run2Button" class="runButton"/>
+        <circle id="run3Button" class="runButton"/>
 
+        <text id="run1Label" class="runLabel">1
+                <animate attributeName="opacity" begin="load" from="0" to="1" dur="2" final="restore" />
+        </text>
+        <text id="run2Label" class="runLabel">2
+                <animate attributeName="opacity" begin="load" from="0" to="1" dur="3" final="restore" />
+        </text>
+        <text id="run3Label" class="runLabel">3
+                <animate attributeName="opacity" begin="load" from="0" to="1" dur="4" final="restore" />
+        </text>
+
+        <rect id="clickableForeground" pointer-events="all"/>
+    </svg>
+    <svg id="runScreen">
+        <rect id="runBackground" class="background"/>
+        <text id="runInstructionText"></text>
+    </svg>
 </svg>

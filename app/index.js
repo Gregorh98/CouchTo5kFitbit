@@ -1,21 +1,25 @@
 import { me as appbit } from "appbit";
-import { weekDistributor } from './runMethods.js'
+import {weekRunDistributor} from './runMethods.js';
 import { display } from "display";
 
 appbit.appTimeoutEnabled = false;
-//week_1();
 
 import document from "document";
-const tehs = document.getElementById("clickableForeground"); // TEHS - Touch-event handler screen (blame FitBit)
+const homeScreen = document.getElementById("homeScreen");
+const runScreen  = document.getElementById("runScreen");
+
+// Home screen elements
+const tehs = document.getElementById("clickableForeground"); // TEHS - Touch-event handler screen (blame Fitbit for their lack of a good swipe API)
+
 const myLabel = document.getElementById("myLabel");
 
 const run1Button = document.getElementById("run1Button");
 const run2Button = document.getElementById("run2Button");
 const run3Button = document.getElementById("run3Button");
 
-
 var touchstartX = 0
 var touchendX = 0
+var screenIndex = 0
 
 var currentWeekIndex = 0;
 var weeks = [
@@ -31,6 +35,18 @@ var weeks = [
 ]
 
 myLabel.text = weeks[currentWeekIndex]["name"]
+
+function showHomeScreen() {
+    screenIndex = 0;
+    homeScreen.style.display = "inline";
+    runScreen.style.display = "none";
+}
+
+function showRunScreen() {
+    screenIndex = 1;
+    homeScreen.style.display = "none";
+    runScreen.style.display = "inline";
+}
 
 function isWithinBounds(coords, bounds) {
   return (
@@ -58,51 +74,71 @@ function checkElementClicked(e)
     }
 }
 
-function checkDirection(e) {
+function handleTouch(e) {
     touchendX = e.screenX
-  if ((touchendX - touchstartX) < -10)
-  {
-    if ((currentWeekIndex + 1) < weeks.length)
+    if ((touchendX - touchstartX) < -10)
     {
-        currentWeekIndex += 1;
+        if (screenIndex == 0)
+        {
+            if ((currentWeekIndex + 1) < weeks.length)
+            {
+                currentWeekIndex += 1;
+            }
+            myLabel.text = weeks[currentWeekIndex]["name"]
+        }
     }
-    myLabel.text = weeks[currentWeekIndex]["name"]
-  }
-  else if ((touchendX - touchstartX) > 10)
-  {
-    if ((currentWeekIndex - 1) >= 0)
+    else if ((touchendX - touchstartX) > 10)
     {
-        currentWeekIndex -= 1;
+        if (screenIndex == 0)
+        {
+            if ((currentWeekIndex - 1) >= 0)
+            {
+                currentWeekIndex -= 1;
+            }
+            myLabel.text = weeks[currentWeekIndex]["name"]
+        }
     }
-    myLabel.text = weeks[currentWeekIndex]["name"]
-  }
-  else
-  {
-      switch (checkElementClicked(e))
+    else
     {
-        case run1Button:
-            weekDistributor(currentWeekIndex, 0)
-            break;
-        case run2Button:
-            weekDistributor(currentWeekIndex, 1)
-            break;
-        case run3Button:
-            weekDistributor(currentWeekIndex, 2)
-            break;
+        if (screenIndex == 0)
+        {
+            switch (checkElementClicked(e))
+            {
+            case run1Button:
+                showRunScreen()
+                weekRunDistributor(currentWeekIndex, 0)
+                break;
+            case run2Button:
+                showRunScreen()
+                weekRunDistributor(currentWeekIndex, 1)
+                break;
+            case run3Button:
+                showRunScreen()
+                weekRunDistributor(currentWeekIndex, 2)
+                break;
+            }
+        }
     }
-  }
 }
 
-function handleClick(e)
-{
-    console.log("clicked!")
-    console.log(e.screenX, e.screenY)
-}
 
 tehs.addEventListener('mousedown', e => {
     touchstartX = e.screenX
 })
 
 tehs.addEventListener('mouseup', e => {
-    checkDirection(e)
+    handleTouch(e)
 })
+
+
+document.onkeypress = function(evt) {
+  if (evt.key === "back") {
+      if (screenIndex != 0)
+      {
+        showHomeScreen();
+        evt.preventDefault();
+      }
+  }
+}
+
+showHomeScreen()

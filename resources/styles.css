@@ -1,4 +1,4 @@
-#background {
+.background {
   fill: #0995a5;
   height:100%;
   width:100%;
@@ -61,4 +61,14 @@
 
 #run3Label {
     x: 80%-1;
+}
+
+#runInstructionText {
+    font-size: 32;
+    font-family: System-Bold;
+    text-length: 32;
+    text-anchor: middle;
+    x: 50%;
+    y: 50%;
+    fill: white;
 }
