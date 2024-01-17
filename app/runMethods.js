@@ -50,7 +50,7 @@ export async function w1r1() {
         await event("Walk", 90)
     }
 
-    await event("Run" 60)
+    await event("Run", 60)
 
     await event("Cool-Down Walk", 300)
 
@@ -74,7 +74,7 @@ export async function w2r1() {
         await event("Walk", 120)
     }
 
-    await event("Run" 90)
+    await event("Run", 90)
 
     await event("Cool-Down Walk", 300)
 
@@ -93,13 +93,13 @@ export async function w2r3() {
 export async function w3r1() {
     await event("Warm-Up Walk", 300)
 
-    await event("Run" 90)
+    await event("Run", 90)
     await event("Walk", 90)
-    await event("Run" 180)
+    await event("Run", 180)
     await event("Walk", 180)
-    await event("Run" 90)
+    await event("Run", 90)
     await event("Walk", 90)
-    await event("Run" 180)
+    await event("Run", 180)
 
     await event("Cool-Down Walk", 300)
     await event("Finished!", 0)
@@ -117,13 +117,13 @@ export async function w3r3() {
 export async function w4r1() {
     await event("Warm-Up Walk", 300)
 
-    await event("Run" 180)
+    await event("Run", 180)
     await event("Walk", 90)
-    await event("Run" 300)
+    await event("Run", 300)
     await event("Walk", 150)
-    await event("Run" 180)
+    await event("Run", 180)
     await event("Walk", 90)
-    await event("Run" 300)
+    await event("Run", 300)
 
     await event("Cool-Down Walk", 300)
     await event("Finished!", 0)
@@ -141,11 +141,11 @@ export async function w4r3() {
 export async function w5r1() {
     await event("Warm-Up Walk", 300)
 
-    await event("Run" 300)
+    await event("Run", 300)
     await event("Walk", 180)
-    await event("Run" 300)
+    await event("Run", 300)
     await event("Walk", 180)
-    await event("Run" 300)
+    await event("Run", 300)
 
     await event("Cool-Down Walk", 300)
     await event("Finished!", 0)
@@ -154,9 +154,9 @@ export async function w5r1() {
 export async function w5r2() {
     await event("Warm-Up Walk", 300)
 
-    await event("Run" 480)
+    await event("Run", 480)
     await event("Walk", 300)
-    await event("Run" 480)
+    await event("Run", 480)
 
     await event("Cool-Down Walk", 300)
     await event("Finished!", 0)
@@ -175,11 +175,11 @@ export async function w5r3() {
 export async function w6r1() {
     await event("Warm-Up Walk", 300)
 
-    await event("Run" 300)
+    await event("Run", 300)
     await event("Walk", 180)
-    await event("Run" 480)
+    await event("Run", 480)
     await event("Walk", 180)
-    await event("Run" 300)
+    await event("Run", 300)
 
     await event("Cool-Down Walk", 300)
     await event("Finished!", 0)
@@ -188,9 +188,9 @@ export async function w6r1() {
 export async function w6r2() {
     await event("Warm-Up Walk", 300)
 
-    await event("Run" 600)
+    await event("Run", 600)
     await event("Walk", 180)
-    await event("Run" 600)
+    await event("Run", 600)
 
     await event("Cool-Down Walk", 300)
     await event("Finished!", 0)
