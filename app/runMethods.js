@@ -207,15 +207,15 @@ export async function w6r3() {
 
 // Week 7
 export async function w7r1() {
-    console.log("week 7 - run 1");
+    await w6r3()
 }
 
 export async function w7r2() {
-    console.log("week 7 - run 2");
+    await w6r3()
 }
 
 export async function w7r3() {
-    console.log("week 7 - run 3");
+    await w6r3()
 }
 
 // Week 8
