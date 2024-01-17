@@ -22,11 +22,12 @@ function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
-function event(type)
+async function event(type, seconds)
 {
     display.poke()
     vibration.start(vibrationType);
     runInstructionText.text = type;
+    await sleep(seconds * 100);
 }
 
 export async function weekRunDistributor(week, run) {
@@ -42,47 +43,50 @@ export async function weekRunDistributor(week, run) {
 
 // Week 1
 export async function w1r1() {
-    console.log("week 1 - run 1");
-    event("Warm-Up Walk")
-    await sleep(300000);
+    await event("Warm-Up Walk", 300)
 
     for (var i = 1; i <= 8; i++) {
-        event("Run " + i.toString())
-        await sleep(60000);
-
-        event("Walk")
-        await sleep(90000);
+        await event("Run " + i.toString(), 60)
+        await event("Walk", 90)
     }
-    event("Run " + i.toString())
-    await sleep(60000);
 
-    event("Cool-Down Walk")
-    await sleep(300000);
+    await event("Run " + i.toString(), 60)
 
-    event("Finished!")
+    await event("Cool-Down Walk", 300)
+
+    await event("Finished!", 0)
 }
 
 export async function w1r2() {
-    console.log("week 1 - run 2");
     await w1r1();
 }
 
 export async function w1r3() {
-    console.log("week 1 - run 3");
     await w1r1();
 }
 
 // Week 2
 export async function w2r1() {
-    console.log("week 2 - run 1");
+    await event("Warm-Up Walk", 300)
+
+    for (var i = 1; i <= 5; i++) {
+        await event("Run " + i.toString(), 90)
+        await event("Walk", 120)
+    }
+
+    await event("Run " + i.toString(), 90)
+
+    await event("Cool-Down Walk", 300)
+
+    await event("Finished!", 0)
 }
 
 export async function w2r2() {
-    console.log("week 2 - run 2");
+    await w2r1()
 }
 
 export async function w2r3() {
-    console.log("week 2 - run 3");
+    await w2r1()
 }
 
 // Week 3
