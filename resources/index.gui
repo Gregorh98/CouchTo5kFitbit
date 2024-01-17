@@ -1,6 +1,16 @@
 <svg>
     <svg id="homeScreen">
         <rect id="background" class="background"/>
+
+        <rect x='0' y='0' fill='#0995a5' width='100%' height='50%' />
+
+        <rect x='0' y='50%-30' width='30' height='30' fill='white' />
+        <circle r='30' cx='30' cy='50%-30' fill='#0995a5' />
+
+        <rect x='100%-30' y='50%-30' width='30' height='30' fill='white' />
+        <circle r='30' cx='100%-30' cy='50%-30' fill='#0995a5' />
+
+
         <text id="myLabel">
             <animate attributeName="opacity" begin="load" from="0" to="1" dur="2" final="restore" />
         </text>
@@ -13,10 +23,10 @@
                 <animate attributeName="opacity" begin="load" from="0" to="1" dur="2" final="restore" />
         </text>
         <text id="run2Label" class="runLabel">2
-                <animate attributeName="opacity" begin="load" from="0" to="1" dur="3" final="restore" />
+                <animate attributeName="opacity" begin="load" from="0" to="1" dur="2" final="restore" />
         </text>
         <text id="run3Label" class="runLabel">3
-                <animate attributeName="opacity" begin="load" from="0" to="1" dur="4" final="restore" />
+                <animate attributeName="opacity" begin="load" from="0" to="1" dur="2" final="restore" />
         </text>
 
         <rect id="clickableForeground" pointer-events="all"/>
