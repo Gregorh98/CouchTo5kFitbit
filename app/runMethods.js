@@ -50,7 +50,7 @@ export async function w1r1() {
         await event("Walk", 90)
     }
 
-    await event("Run " + i.toString(), 60)
+    await event("Run ", 60)
 
     await event("Cool-Down Walk", 300)
 
@@ -74,7 +74,7 @@ export async function w2r1() {
         await event("Walk", 120)
     }
 
-    await event("Run " + i.toString(), 90)
+    await event("Run ", 90)
 
     await event("Cool-Down Walk", 300)
 
@@ -93,13 +93,13 @@ export async function w2r3() {
 export async function w3r1() {
     await event("Warm-Up Walk", 300)
 
-    await event("Run " + i.toString(), 90)
+    await event("Run ", 90)
     await event("Walk", 90)
-    await event("Run " + i.toString(), 180)
+    await event("Run ", 180)
     await event("Walk", 180)
-    await event("Run " + i.toString(), 90)
+    await event("Run ", 90)
     await event("Walk", 90)
-    await event("Run " + i.toString(), 180)
+    await event("Run ", 180)
 
     await event("Cool-Down Walk", 300)
     await event("Finished!", 0)
@@ -117,13 +117,13 @@ export async function w3r3() {
 export async function w4r1() {
     await event("Warm-Up Walk", 300)
 
-    await event("Run " + i.toString(), 180)
+    await event("Run ", 180)
     await event("Walk", 90)
-    await event("Run " + i.toString(), 300)
+    await event("Run ", 300)
     await event("Walk", 150)
-    await event("Run " + i.toString(), 180)
+    await event("Run ", 180)
     await event("Walk", 90)
-    await event("Run " + i.toString(), 300)
+    await event("Run ", 300)
 
     await event("Cool-Down Walk", 300)
     await event("Finished!", 0)
@@ -139,15 +139,36 @@ export async function w4r3() {
 
 // Week 5
 export async function w5r1() {
-    console.log("week 5 - run 1");
+    await event("Warm-Up Walk", 300)
+
+    await event("Run ", 300)
+    await event("Walk", 180)
+    await event("Run ", 300)
+    await event("Walk", 180)
+    await event("Run ", 300)
+
+    await event("Cool-Down Walk", 300)
+    await event("Finished!", 0)
 }
 
 export async function w5r2() {
-    console.log("week 5 - run 2");
+    await event("Warm-Up Walk", 300)
+
+    await event("Run ", 480)
+    await event("Walk", 300)
+    await event("Run ", 480)
+
+    await event("Cool-Down Walk", 300)
+    await event("Finished!", 0)
 }
 
 export async function w5r3() {
-    console.log("week 5 - run 3");
+    await event("Warm-Up Walk", 300)
+
+    await event("Run " + i.toString(), 1200)
+
+    await event("Cool-Down Walk", 300)
+    await event("Finished!", 0)
 }
 
 // Week 6
