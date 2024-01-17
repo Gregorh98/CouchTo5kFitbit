@@ -1,13 +1,64 @@
-.background {
-  viewport-fill: red;
+#background {
+  fill: #0995a5;
+  height:100%;
+  width:100%;
+}
+
+#clickableForeground {
+    opacity: 0;
+    height:100%;
+    width:100%;
 }
 
 #myLabel {
-  font-size: 40;
-  font-family: System-Bold;
-  text-length: 32;
-  text-anchor: middle;
-  x: 50%;
-  y: 50%+40;
-  fill: white;
+    font-size: 60;
+    font-family: System-Bold;
+    text-length: 32;
+    text-anchor: middle;
+    x: 50%;
+    y: 40%;
+    fill: white;
+}
+
+.runButton {
+    cy: 66%;
+    r:35;
+    fill: yellow;
+    anchor: middle;
+}
+
+#run1Button {
+    cx: 20%;
+}
+
+#run2Button {
+    cx: 50%;
+}
+
+#run3Button {
+    cx: 80%;
+}
+
+
+
+.runLabel {
+    y: 66%+23;
+    font-size: 70;
+    font-family: System-Bold;
+    text-length: 1;
+    fill: black;
+    display-align: middle;
+    text-anchor:middle;
+}
+
+#run1Label {
+    x: 20%-1;
+}
+
+#run2Label {
+    x: 50%-1;
+}
+
+#run3Label {
+    x: 80%-1;
 }
