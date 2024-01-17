@@ -64,10 +64,12 @@ export async function w1r1() {
 
 export async function w1r2() {
     console.log("week 1 - run 2");
+    await w1r1();
 }
 
 export async function w1r3() {
     console.log("week 1 - run 3");
+    await w1r1();
 }
 
 // Week 2
