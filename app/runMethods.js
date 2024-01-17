@@ -220,26 +220,36 @@ export async function w7r3() {
 
 // Week 8
 export async function w8r1() {
-    console.log("week 8 - run 1");
+    await event("Warm-Up Walk", 300)
+
+    await event("Run", 1680)
+
+    await event("Cool-Down Walk", 300)
+    await event("Finished!", 0)
 }
 
 export async function w8r2() {
-    console.log("week 8 - run 2");
+    await w8r1()
 }
 
 export async function w8r3() {
-    console.log("week 8 - run 3");
+    await w8r1()
 }
 
 // Week 9
 export async function w9r1() {
-    console.log("week 9 - run 1");
+    await event("Warm-Up Walk", 300)
+
+    await event("Run", 1800)
+
+    await event("Cool-Down Walk", 300)
+    await event("Finished!", 0)
 }
 
 export async function w9r2() {
-    console.log("week 9 - run 2");
+    await w9r1();
 }
 
 export async function w9r3() {
-    console.log("week 9 - run 3");
+    await w9r1();
 }
